@@ -1,0 +1,43 @@
+﻿<#@ template debug="false" hostspecific="True" language="C#" #>
+<#@ output extension=".cs" encoding="utf-8" #>
+<#@ include file="SQLServer.ttinclude" #>
+
+using System;
+
+namespace <#=Namespace#> {
+<#
+    var tables = LoadTables();
+    //遍历所有表
+    foreach(var tbl in tables){
+#>
+
+		public class <#=tbl.CleanName#>Table {
+			/// <summary>
+			/// 表名
+			/// </summary>
+			public static string TableName {
+				get{
+					return "<#=tbl.CleanName#>";
+				  }
+			}
+			//新增代码，循环遍历表中的所有字段，创建相应的函数
+		<#
+			foreach(var col in tbl.Columns){
+		#>
+				/// <summary>
+				/// <#=Replace(col.Description) #>
+				/// </summary>
+				public static string <#= col.Name #>{
+				  get{
+              　　	return "<#= col.Name #>";
+				  }
+				}
+	<#
+			}
+	#>                    
+
+		}
+<#
+    }
+#>  
+}

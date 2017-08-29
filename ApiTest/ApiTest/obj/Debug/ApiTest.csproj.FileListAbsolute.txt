@@ -1,0 +1,6 @@
+E:\TestCode\ApiTest\ApiTest\bin\Debug\ApiTest.exe.config
+E:\TestCode\ApiTest\ApiTest\bin\Debug\ApiTest.exe
+E:\TestCode\ApiTest\ApiTest\bin\Debug\ApiTest.pdb
+E:\TestCode\ApiTest\ApiTest\obj\Debug\ApiTest.csprojResolveAssemblyReference.cache
+E:\TestCode\ApiTest\ApiTest\obj\Debug\ApiTest.exe
+E:\TestCode\ApiTest\ApiTest\obj\Debug\ApiTest.pdb
