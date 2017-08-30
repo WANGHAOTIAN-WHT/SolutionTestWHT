@@ -9,3 +9,9 @@ E:\TestCode\Subsonic\DotNet.Utilities\bin\Debug\DotNet.Utilities.dll
 E:\TestCode\Subsonic\DotNet.Utilities\bin\Debug\DotNet.Utilities.pdb
 E:\TestCode\Subsonic\DotNet.Utilities\obj\Debug\DotNet.Utilities.dll
 E:\TestCode\Subsonic\DotNet.Utilities\obj\Debug\DotNet.Utilities.pdb
+E:\CodeGit\SolutionTestWHT\Subsonic\DotNet.Utilities\bin\Debug\DotNet.Utilities.XML
+E:\CodeGit\SolutionTestWHT\Subsonic\DotNet.Utilities\bin\Debug\DotNet.Utilities.dll
+E:\CodeGit\SolutionTestWHT\Subsonic\DotNet.Utilities\bin\Debug\DotNet.Utilities.pdb
+E:\CodeGit\SolutionTestWHT\Subsonic\DotNet.Utilities\obj\Debug\DotNet.Utilities.csprojResolveAssemblyReference.cache
+E:\CodeGit\SolutionTestWHT\Subsonic\DotNet.Utilities\obj\Debug\DotNet.Utilities.dll
+E:\CodeGit\SolutionTestWHT\Subsonic\DotNet.Utilities\obj\Debug\DotNet.Utilities.pdb

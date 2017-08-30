@@ -1,0 +1,98 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" encoding="utf-8" #>
+<#@ include file="SQLServer.ttinclude" #>
+//生成多文件工具类
+<#@ include file="MultipleOutputHelper.ttinclude"#> 
+
+<#
+	//获取所有表和视图
+	var tables=LoadTables();
+	//创建多文件生成实体
+	var manager = Manager.Create(Host, GenerationEnvironment);
+
+	//遍历所有表
+	foreach(var tbl in tables){
+		//判断当前表名是否禁用（禁用的名称可以在Settings.ttinclude文件的ExcludeTables字符串数据中进行添加）
+		if(!ExcludeTables.Contains(tbl.Name)){
+			manager.StartNewFile(tbl.ClassName+"Bll.cs");		
+#>
+
+using System;
+using SubSonic.DataProviders;
+using Solution.DataAccess.DataModel;
+using Solution.DataAccess.DbHelper;
+
+namespace Solution.Logic{
+	
+	public partial class <#=tbl.CleanName#>Bll {
+		
+		#region 单例模式
+		
+		//定义单例实体
+		private static <#=tbl.Name#>Bll _<#=tbl.Name#>Bll=null;
+		
+		/// <summary>
+		/// 获取本逻辑类单例
+		/// </summary>
+		/// <returns></returns>
+		public static <#=tbl.Name#>Bll GetInstence(){
+			if(_<#=tbl.Name#>Bll==null){
+				_<#=tbl.Name#>Bll = new <#=tbl.Name#>Bll();
+			}
+			return _<#=tbl.Name#>Bll;
+		}
+		
+		#endregion
+
+<#
+			foreach(var col in tbl.Columns){
+				//判断表是否存在Id主键
+				if(col.CleanName.IndexOf("_Id")>=0 && (col.SysType == "int" || col.SysType == "long")){
+#>
+
+		#region 删除<#=tbl.Name#>表指定<#=col.CleanName#>字段值的记录
+        /// <summary>
+        /// 删除<#=tbl.Name#>表指定<#=col.CleanName#>字段值的记录
+        /// </summary>
+        /// <param name="id">记录的主键值</param>
+        public void DeleteBy<#=col.CleanName#>(int id)
+        {
+            <#=tbl.Name#>.Delete(x => x.<#=col.CleanName#> == id);
+        }
+        /// <summary>
+        /// 删除<>表指定<>字段值的记录
+        /// </summary>
+        /// <param name="id">记录的主键值</param>
+        public void DeleteBy<#=col.CleanName#>(int[] id)
+        {
+            if (id == null) return;
+            IDataProvider provider = null;
+
+            //将数组转为逗号分隔的字符串
+            var str = string.Join(",", id);
+            //拼装SQL语句
+            var sql = "delete from <#=tbl.Name#> where <#=col.CleanName#> in (" + str + ")";
+            //删除
+
+            var deleteHelper = new DeleteHelper(provider);
+            deleteHelper.Delete(sql);
+        }
+        #endregion
+
+<#
+				}// end if
+			}//end foreach
+#>
+
+	}
+}
+
+<#
+			//文件输出结束
+			manager.EndBlock();
+		}//if(!ExcludeTables.Contains(tbl.Name)) 判断结束
+	}// end foreach
+
+	//执行编译，生成文件
+	manager.Process(true);
+#>

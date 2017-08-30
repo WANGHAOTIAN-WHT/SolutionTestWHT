@@ -16,3 +16,10 @@ E:\TestCode\Subsonic\SubSonic.Core\bin\Debug\SubSonic.Core.pdb
 E:\TestCode\Subsonic\SubSonic.Core\bin\Debug\Castle.Core.dll
 E:\TestCode\Subsonic\SubSonic.Core\obj\Debug\SubSonic.Core.dll
 E:\TestCode\Subsonic\SubSonic.Core\obj\Debug\SubSonic.Core.pdb
+E:\CodeGit\SolutionTestWHT\Subsonic\SubSonic.Core\bin\Debug\SubSonic.Core.XML
+E:\CodeGit\SolutionTestWHT\Subsonic\SubSonic.Core\bin\Debug\SubSonic.Core.dll
+E:\CodeGit\SolutionTestWHT\Subsonic\SubSonic.Core\bin\Debug\SubSonic.Core.pdb
+E:\CodeGit\SolutionTestWHT\Subsonic\SubSonic.Core\bin\Debug\Castle.Core.dll
+E:\CodeGit\SolutionTestWHT\Subsonic\SubSonic.Core\obj\Debug\SubSonic.Core.csprojResolveAssemblyReference.cache
+E:\CodeGit\SolutionTestWHT\Subsonic\SubSonic.Core\obj\Debug\SubSonic.Core.dll
+E:\CodeGit\SolutionTestWHT\Subsonic\SubSonic.Core\obj\Debug\SubSonic.Core.pdb

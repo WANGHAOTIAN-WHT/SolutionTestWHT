@@ -12,7 +12,6 @@ namespace DotNet.Utilities
 {
     /// <summary>
     ///	BUBaseAppMessage
-    /// </author> 
     /// </summary>
     public class AppMessage
     {
